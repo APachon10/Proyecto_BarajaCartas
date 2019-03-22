@@ -1,55 +1,63 @@
 package daoImpl;
 
-import javax.xml.transform.OutputKeys;
-
-import org.exist.management.impl.Database;
-import org.exist.xmldb.EXistResource;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
-import org.xmldb.api.base.XMLDBException;
+import org.xmldb.api.base.Database;
 import org.xmldb.api.modules.XMLResource;
 
-public class BarajaImplement {
+import daoInterfaces.BarajasInterfaz;
 
-	public static void main(String[] args) {
-//		final String driver = "org.exist.xmldb.DatabaseImpl";
-//		// initialize database driver
-//		Class cl = Class.forName(driver);
-//		Database database = (Database) cl.newInstance();
-//		database.setProperty("create-database","true");
-//		DatabaseManager.registerDatabase(database);
-//
-//		Collection col = null;
-//		XMLResource res = null;
-//		try {    
-//			// get the collection
-//			col = DatabaseManager.getCollection(URI + args[0]);
-//			col.setProperty(OutputKeys.INDENT, "no");
-//			res = (XMLResource)col.getResource(args[0]);
-//
-//			if(res == null) {
-//				System.out.println("document not found!");
-//			} else {
-//				System.out.println(res.getContent());
-//			}
-//		} finally {
-//			//dont forget to clean up!
-//			if(res != null) {
-//				try { 
-//					((EXistResource)res).freeResources();
-//				} catch(XMLDBException e) {
-//					e.printStackTrace();
-//				}
-//			}
-//			if(col != null) {
-//				try { col.close(); 
-//				
-//				} catch(XMLDBException xe) {
-//					xe.printStackTrace();
-//				}
-//			}
-//		}
+public class BarajaImplement implements BarajasInterfaz{
+	protected static String driver = "org.exist.xmldb.DatabaseImpl";
+	protected static String URI = "xmldb:exist://localhost:8845/exist/xmlrpc";
+    protected static String collectionPath = "/db/Cartas"; 
+    protected static String resourceName = "Cartas.xml"; 
+    @Override
+	public void cargarCartas() {
+		try {
+			Class cl = Class.forName(driver);
+			Database base_datos = (Database) cl.newInstance();
+			base_datos.setProperty("create-database","true");
+			DatabaseManager.registerDatabase(base_datos);
+			
+			Collection coleccion = null;
+			XMLResource archivo_xml = null;
+			try {
+				coleccion = DatabaseManager.getCollection(URI +collectionPath);
+				archivo_xml =(XMLResource) coleccion.getResource(resourceName);
+				if (archivo_xml == null) {
+					System.out.println("Documento no Encontrado!");
+				}else {
+					System.out.println("Hola");
+					System.out.println(archivo_xml.getContent());
+				}
+			}catch(Exception e){
+				System.out.println("Error 1: "+e);
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			System.out.println("Error 2:" +e);
+			e.printStackTrace();
+		}
 	}
-
-}
+	@Override
+	public void generarDeckAleatorio() {
+		
+	}
+	@Override
+	public void guardarDeck() {
+		
+	}
+	@Override
+	public void moverCartasaDeck() {
+	
+	}
+	@Override
+	public void moverCartasaColeccion() {
+		
+	}
+	public static void main(String[] args) {
+		BarajaImplement b = new BarajaImplement();
+		b.cargarCartas();
+	}
 }
