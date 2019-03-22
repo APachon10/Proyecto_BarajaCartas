@@ -1,0 +1,97 @@
+<cards>
+  <card id="1">
+    <name>Saber</name>
+    <summonCost>10</summonCost>
+    <attack>20</attack>
+    <defense>10</defense>
+    <value>5</value>
+  </card>
+
+  <card id="2">
+    <name>Archer</name>
+    <summonCost>5</summonCost>
+    <attack>5</attack>
+    <defense>2</defense>
+    <value>3</value>
+  </card>
+
+  <card id="3">
+    <name>Lancer</name>
+    <summonCost>6</summonCost>
+    <attack>8</attack>
+    <defense>2</defense>
+    <value>5</value>
+  </card>
+
+  <card id="4">
+    <name>Alter Saber</name>
+    <summonCost>10</summonCost>
+    <attack>9</attack>
+    <defense>4</defense>
+    <value>3</value>
+  </card>
+
+  <card id="5">
+    <name>Rider</name>
+    <summonCost>5</summonCost>
+    <attack>2</attack>
+    <defense>2</defense>
+    <value>2</value>
+  </card>
+
+  <card id="6">
+    <name>Berserker</name>
+    <summonCost>5</summonCost>
+    <attack>20</attack>
+    <defense>20</defense>
+    <value>10</value>
+  </card>
+
+  <card id="7">
+    <name>Caster</name>
+    <summonCost>5</summonCost>
+    <attack>15</attack>
+    <defense>20</defense>
+    <value>5</value>
+  </card>
+
+  <card id="8">
+    <name>Assasssin</name>
+    <summonCost>5</summonCost>
+    <attack>10</attack>
+    <defense>5</defense>
+    <value>5</value>
+  </card>
+
+  <card id="9">
+    <name>Gilgamesh</name>
+    <summonCost>10</summonCost>
+    <attack>30</attack>
+    <defense>30</defense>
+    <value>10</value>
+  </card>
+
+  <card id="10">
+    <name>Gilgamesh</name>
+    <summonCost>10</summonCost>
+    <attack>30</attack>
+    <defense>30</defense>
+    <value>10</value>
+  </card>
+
+  <card id="11">
+    <name>The Shadow</name>
+    <summonCost>10</summonCost>
+    <attack>5</attack>
+    <defense>25</defense>
+    <value>10</value>
+  </card>
+
+  <card id="12">
+    <name>Aŋra Mainiiu(Avenger)</name>
+    <summonCost>10</summonCost>
+    <attack>5</attack>
+    <defense>25</defense>
+    <value>10</value>
+  </card>
+</cards>
