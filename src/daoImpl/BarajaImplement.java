@@ -28,15 +28,12 @@ public class BarajaImplement implements BarajasInterfaz{
 				if (archivo_xml == null) {
 					System.out.println("Documento no Encontrado!");
 				}else {
-					System.out.println("Hola");
 					System.out.println(archivo_xml.getContent());
 				}
 			}catch(Exception e){
-				System.out.println("Error 1: "+e);
 				e.printStackTrace();
 			}
 		} catch (Exception e) {
-			System.out.println("Error 2:" +e);
 			e.printStackTrace();
 		}
 	}
