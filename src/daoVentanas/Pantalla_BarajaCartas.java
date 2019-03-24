@@ -2,10 +2,13 @@ package daoVentanas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JList;
@@ -17,12 +20,13 @@ import javax.swing.JTextField;
 public class Pantalla_BarajaCartas extends JFrame {
 	private JPanel contentPane;
 	private JTextField Nombre_Baraja;	
+	private static JList SeleccionCartas,Cartas_Mazo;
 	public Pantalla_BarajaCartas() {
 		setTitle("Crear Baraja");
 
-		JList SeleccionCartas = new JList();
+		SeleccionCartas = new JList();
 
-		JList Cartas_Mazo = new JList();
+		Cartas_Mazo = new JList();
 
 		JButton Insertar = new JButton("---->");
 
@@ -87,13 +91,22 @@ public class Pantalla_BarajaCartas extends JFrame {
 						.addContainerGap(29, Short.MAX_VALUE))
 				);
 		getContentPane().setLayout(groupLayout);
+		Insertar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cargarCartas();
+			}
+		});
 		this.setVisible(true);
 		this.setSize(630, 400);
 	}
+	public  void cargarCartas() {
+		DefaultListModel modelo = new DefaultListModel();
+		modelo.addElement("Hola");
+		SeleccionCartas.setModel(modelo);
+	}
+	public static void main(String[] args) {
+		Pantalla_BarajaCartas b = new Pantalla_BarajaCartas();
+	}
 
-
-
-	//	public static void main(String[] args) {
-	//		new Pantalla_BarajaCartas();
-	//	}
 }
