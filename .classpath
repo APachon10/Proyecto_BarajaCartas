@@ -2,21 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/TNB-20/Desktop/Practicas/AMS2/M6/Proyecto_BarajaCartas/RecursosProyecto/exist.jar"/>
-	<classpathentry kind="lib" path="C:/Users/TNB-20/Desktop/Practicas/AMS2/M6/Proyecto_BarajaCartas/RecursosProyecto/gson-2.8.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/TNB-20/Desktop/Practicas/AMS2/M6/Proyecto_BarajaCartas/RecursosProyecto/java-json.jar"/>
-	<classpathentry kind="lib" path="C:/Users/TNB-20/Desktop/Practicas/AMS2/M6/Proyecto_BarajaCartas/RecursosProyecto/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/TNB-20/Desktop/Practicas/AMS2/M6/Proyecto_BarajaCartas/RecursosProyecto/mongo-java-driver-3.10.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/TNB-20/Desktop/Practicas/AMS2/M6/Proyecto_BarajaCartas/RecursosProyecto/org-apache-xmlrpc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/TNB-20/Desktop/Practicas/AMS2/M6/Proyecto_BarajaCartas/RecursosProyecto/ws-commons-util-1.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/TNB-20/Desktop/Practicas/AMS2/M6/Proyecto_BarajaCartas/RecursosProyecto/xmldb.jar"/>
-	<classpathentry kind="lib" path="C:/Users/xp/Downloads/Desktop/Practicas/AMS2/Proyectos/Nueva carpeta (2)/exist.jar"/>
-	<classpathentry kind="lib" path="C:/Users/xp/Downloads/Desktop/Practicas/AMS2/Proyectos/Nueva carpeta (2)/gson-2.8.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/xp/Downloads/Desktop/Practicas/AMS2/Proyectos/Nueva carpeta (2)/java-json.jar"/>
-	<classpathentry kind="lib" path="C:/Users/xp/Downloads/Desktop/Practicas/AMS2/Proyectos/Nueva carpeta (2)/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/xp/Downloads/Desktop/Practicas/AMS2/Proyectos/Nueva carpeta (2)/mongo-java-driver-3.10.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/xp/Downloads/Desktop/Practicas/AMS2/Proyectos/Nueva carpeta (2)/org-apache-xmlrpc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/xp/Downloads/Desktop/Practicas/AMS2/Proyectos/Nueva carpeta (2)/ws-commons-util-1.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/xp/Downloads/Desktop/Practicas/AMS2/Proyectos/Nueva carpeta (2)/xmldb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xp/git/Proyecto_BarajaCartas/Jars/exist.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xp/git/Proyecto_BarajaCartas/Jars/gson-2.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xp/git/Proyecto_BarajaCartas/Jars/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xp/git/Proyecto_BarajaCartas/Jars/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xp/git/Proyecto_BarajaCartas/Jars/mongo-java-driver-3.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xp/git/Proyecto_BarajaCartas/Jars/org-apache-xmlrpc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xp/git/Proyecto_BarajaCartas/Jars/ws-commons-util-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xp/git/Proyecto_BarajaCartas/Jars/xmldb.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
