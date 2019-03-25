@@ -1,9 +1,12 @@
 package daoInterfaces;
 
+import java.util.ArrayList;
+
+import daoModelos.Carta;
+
 public interface BarajasInterfaz {
-	public void cargarCartas();
+	public ArrayList<Carta> cargarCartas();
 	public void generarDeckAleatorio();
-	public void guardarDeck();
 	public void moverCartasaDeck();
 	public void moverCartasaColeccion();
 	

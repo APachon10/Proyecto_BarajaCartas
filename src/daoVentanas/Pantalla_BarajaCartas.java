@@ -11,6 +11,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
+
+import daoImpl.BarajaImplement;
+import daoModelos.Carta;
+
 import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -105,8 +109,8 @@ public class Pantalla_BarajaCartas extends JFrame {
 						.addContainerGap(55, Short.MAX_VALUE))
 				);
 		getContentPane().setLayout(groupLayout);
+		
 		btnLoadButton.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				cargarCartas();
@@ -115,11 +119,9 @@ public class Pantalla_BarajaCartas extends JFrame {
 		Insertar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				insertarCartas();
-				
+				insertarCartas();	
 			}
 		});
-
 		this.setVisible(true);
 		this.setSize(630, 400);
 	}
@@ -128,18 +130,17 @@ public class Pantalla_BarajaCartas extends JFrame {
 		modelo3.addElement(SeleccionCartas.getSelectedValue());
 		Cartas_Mazo.setModel(modelo3);
 	}
-	public  void cargarCartas() {
-		ArrayList pruebas = new ArrayList<>();
-		pruebas.add("Hola");
-		pruebas.add("Adios");
-		pruebas.add("Hola_Adios");
+	public DefaultListModel<Carta> cargarCartas() {
+		BarajaImplement bh = new BarajaImplement();
+		
+		ArrayList<Carta> cartas = bh.cargarCartas();
 		DefaultListModel modelo = new DefaultListModel<>();
-		for (int i = 0; i < pruebas.size(); i++) {
-			modelo.addElement(pruebas.get(i));
+		
+		for (int i = 0; i < cartas.size(); i++) {
+			System.out.println(cartas.get(i));
+			modelo.addElement(cartas.get(i).getName() + " - "+ cartas.get(i).getValue());
 		}
 		SeleccionCartas.setModel(modelo);
-	}
-	public static void main(String[] args) {
-		Pantalla_BarajaCartas b = new Pantalla_BarajaCartas();
+		return modelo;
 	}
 }
