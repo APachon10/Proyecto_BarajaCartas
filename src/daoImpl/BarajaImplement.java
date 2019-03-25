@@ -1,6 +1,10 @@
 package daoImpl;
 
+
 import java.util.ArrayList;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -11,7 +15,6 @@ import org.xmldb.api.base.Database;
 import org.xmldb.api.modules.XMLResource;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 
 import daoInterfaces.BarajasInterfaz;
 import daoModelos.Carta;
@@ -20,17 +23,30 @@ public class BarajaImplement implements BarajasInterfaz{
 	protected static String driver = "org.exist.xmldb.DatabaseImpl";
 	protected static String URI = "xmldb:exist://localhost:8845/exist/xmlrpc";
     protected static String collectionPath = "/db/Cartas"; 
-    protected static String resourceName = "Cartas.xml"; 
+    protected static String resourceName = "Cartas.xml";
+    //ArrayLists 
+    private  ArrayList<Carta> cartas_sin_seleccionar;
+    private ArrayList<Carta> cartas_en_Mazo;
+    private JList<Carta> cartas_ns;
+    private JList<Carta> cartas_sn;
     
-    @Override
-    public ArrayList<Carta> cargarCartas() {
-    	ArrayList<Carta> cartas = new ArrayList<Carta>();
+    //Metodos
+    public void conexionExist() {
     	try {
     		Class cl = Class.forName(driver);
     		Database base_datos = (Database) cl.newInstance();
     		base_datos.setProperty("create-database","true");
     		DatabaseManager.registerDatabase(base_datos);
-			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	
+    }
+    @Override
+    public ArrayList<Carta> cargarCartas() {
+    	cartas_sin_seleccionar = new ArrayList<Carta>();
+    	try {
+			conexionExist();
     		Collection coleccion = null;
 			XMLResource archivo_xml = null;
 			try {
@@ -41,11 +57,10 @@ public class BarajaImplement implements BarajasInterfaz{
 				}else {
 					JSONObject objeto = XML.toJSONObject((String) archivo_xml.getContent());
 					JSONArray cards = objeto.getJSONObject("cards").getJSONArray("card");
-					
 					Carta c = null;
 					for (int i = 0; i < cards.length(); i++) {
 						c = new Gson().fromJson(cards.get(i).toString(), Carta.class);
-						cartas.add(c);
+						cartas_sin_seleccionar.add(c);
 					} 
 				}
 			}catch(Exception e){
@@ -54,22 +69,23 @@ public class BarajaImplement implements BarajasInterfaz{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-    	return cartas;
+    	return cartas_sin_seleccionar;
 	}
 	@Override
 	public void generarDeckAleatorio() {
 		
 	}
 	@Override
-	public void moverCartasaDeck() {
-	
-	}
-	@Override
-	public void moverCartasaColeccion() {
+	public void moverCartas(){
+		cargarCartas();
+		int contador=0;
+		try {
+			for (int i = 0; i < cartas_sin_seleccionar.size(); i++) {
+				
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		
-	}
-	public static void main(String[] args) {
-		BarajaImplement b = new BarajaImplement();
-		b.cargarCartas();
 	}
 }

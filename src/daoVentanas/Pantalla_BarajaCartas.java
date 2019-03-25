@@ -113,7 +113,7 @@ public class Pantalla_BarajaCartas extends JFrame {
 		btnLoadButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				cargarCartas();
+				mostrarCartas();
 			}
 		});
 		Insertar.addActionListener(new ActionListener() {
@@ -125,19 +125,33 @@ public class Pantalla_BarajaCartas extends JFrame {
 		this.setVisible(true);
 		this.setSize(630, 400);
 	}
-	public void insertarCartas() {	
-		DefaultListModel modelo3 =new DefaultListModel<>();
-		modelo3.addElement(SeleccionCartas.getSelectedValue());
-		Cartas_Mazo.setModel(modelo3);
+	public DefaultListModel insertarCartas() {	
+		BarajaImplement bh = new BarajaImplement();
+		int contador=0;
+		ArrayList<Carta> cartas = bh.cargarCartas();
+		DefaultListModel modelo2 = new DefaultListModel<>();
+		String indice = null;
+		if (contador<20) {	
+			for (int i = 0; i < 20 i++){
+				if (SeleccionCartas.isSelectionEmpty()) {
+					JOptionPane.showMessageDialog(rootPane, "No has Seleccionado Nada");
+				}else {
+					modelo2.addElement(SeleccionCartas.getSelectedValue());
+				}
+				contador++;
+			}
+			Cartas_Mazo.setModel(modelo2);
+			contador++;
+		}
+		return modelo2;
 	}
-	public DefaultListModel<Carta> cargarCartas() {
+	public DefaultListModel<Carta> mostrarCartas() {
 		BarajaImplement bh = new BarajaImplement();
 		
 		ArrayList<Carta> cartas = bh.cargarCartas();
 		DefaultListModel modelo = new DefaultListModel<>();
 		
 		for (int i = 0; i < cartas.size(); i++) {
-			System.out.println(cartas.get(i));
 			modelo.addElement(cartas.get(i).getName() + " - "+ cartas.get(i).getValue());
 		}
 		SeleccionCartas.setModel(modelo);

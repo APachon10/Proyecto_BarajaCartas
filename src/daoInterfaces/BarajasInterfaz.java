@@ -7,7 +7,6 @@ import daoModelos.Carta;
 public interface BarajasInterfaz {
 	public ArrayList<Carta> cargarCartas();
 	public void generarDeckAleatorio();
-	public void moverCartasaDeck();
-	public void moverCartasaColeccion();
+	public void moverCartas();
 	
 }
